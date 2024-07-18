@@ -5,10 +5,10 @@ import numpy as np
 
 sys.path.append('third_part/GPEN')
 
-from align_faces import get_reference_facial_points, warp_and_crop_face
-from face_detect.retinaface_detection import RetinaFaceDetection
-from face_model.face_gan import FaceGAN
-from face_parse.face_parsing import FaceParse
+from .align_faces import get_reference_facial_points, warp_and_crop_face
+from .face_detect.retinaface_detection import RetinaFaceDetection
+from .face_model.face_gan import FaceGAN
+from .face_parse.face_parsing import FaceParse
 
 from sadtalker_video_lip_sync.src.inference_utils import (
     Laplacian_Pyramid_Blending_with_mask,
