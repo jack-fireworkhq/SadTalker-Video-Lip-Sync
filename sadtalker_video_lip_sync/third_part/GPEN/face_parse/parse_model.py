@@ -4,7 +4,7 @@
 @Modified by yangxy (yangtao9009@gmail.com)
 '''
 
-from face_parse.blocks import *
+from sadtalker_video_lip_sync.third_part.GPEN.face_parse.blocks import *
 import torch
 from torch import nn
 import numpy as np
