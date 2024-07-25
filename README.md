@@ -1,5 +1,21 @@
 # SadTalker-Video-Lip-Sync
 
+## How to use
+
+### 1. Install SadTalker-Video-Lip-Sync with pip
+```shell
+pip install git+https://github.com/jack-fireworkhq/SadTalker-Video-Lip-Sync.git@master
+```
+
+### 2. Use it in your python codes
+```python
+from sadtalker_video_lip_sync.inference import run
+source_video="./trump1_pre_processed.mp4"
+driven_audio="./audio.mp3"
+run(source_video, driven_audio,
+checkpoint_dir="/home/ubuntu/waylon/repos/SadTalker-Video-Lip-Sync/checkpoints/",
+result_dir="/home/ubuntu/sadtalker_test/")
+```
 
 本项目基于SadTalkers实现视频唇形合成的Wav2lip。通过以视频文件方式进行语音驱动生成唇形，设置面部区域可配置的增强方式进行合成唇形（人脸）区域画面增强，提高生成唇形的清晰度。使用DAIN 插帧的DL算法对生成视频进行补帧，补充帧间合成唇形的动作过渡，使合成的唇形更为流畅、真实以及自然。
 
