@@ -19,9 +19,9 @@ warnings.filterwarnings("ignore")
 
 def run(source_video: str, 
         driven_audio: str, 
-        result_output_file: str,
         checkpoint_dir: str,
         result_dir: str, 
+        result_output_file: str = "",
         enhancer: str = "lip",
         batch_size: int = 1,
         use_DAIN: bool = False,
