@@ -34,6 +34,7 @@ sadtalker = "sadtalker_video_lip_sync.inference:main"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.26.0"
+poetry2setup = "^1.1.0"
 
 [build-system]
 requires = ["poetry-core"]
