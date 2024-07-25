@@ -52,12 +52,12 @@ def run(source_video: str,
     audio2pose_yaml_path = os.path.join(parent_dir, 'src', 'config', 'auido2pose.yaml')
 
     audio2exp_checkpoint = os.path.join(current_root_path, checkpoint_dir, 'auido2exp_00300-model.pth')
-    audio2exp_yaml_path = os.path.join(current_root_path, 'src', 'config', 'auido2exp.yaml')
+    audio2exp_yaml_path = os.path.join(parent_dir, 'src', 'config', 'auido2exp.yaml')
 
     free_view_checkpoint = os.path.join(current_root_path, checkpoint_dir, 'facevid2vid_00189-model.pth.tar')
 
     mapping_checkpoint = os.path.join(current_root_path, checkpoint_dir, 'mapping_00109-model.pth.tar')
-    facerender_yaml_path = os.path.join(current_root_path, 'src', 'config', 'facerender_still.yaml')
+    facerender_yaml_path = os.path.join(parent_dir, 'src', 'config', 'facerender_still.yaml')
 
     # init model
     print(path_of_net_recon_model)
