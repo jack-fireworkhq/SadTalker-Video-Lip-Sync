@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 import warnings
 from argparse import ArgumentParser
 from time import strftime
@@ -18,6 +19,7 @@ warnings.filterwarnings("ignore")
 
 def run(source_video: str, 
         driven_audio: str, 
+        result_output_file: str,
         checkpoint_dir: str,
         result_dir: str, 
         enhancer: str = "lip",
@@ -95,7 +97,6 @@ def run(source_video: str,
     torch.cuda.empty_cache()
     if use_DAIN:
         import paddle
-
         from sadtalker_video_lip_sync.src.dain_model import dain_predictor
         paddle.enable_static()
         predictor_dian = dain_predictor.DAINPredictor(dian_output, weight_path=DAIN_weight,
@@ -106,6 +107,13 @@ def run(source_video: str,
         save_path = return_path[:-4] + '_dain.mp4'
         command = r'ffmpeg -y -i "%s" -i "%s" -vcodec copy "%s"' % (temp_video_path, new_audio_path, save_path)
         os.system(command)
+        if result_output_file.strip():
+            print(f"return_path={save_path}, result_output_file={result_output_file}")
+            shutil.copy2(save_path, result_output_file)
+    else:
+        if result_output_file.strip():
+            print(f"return_path={return_path}, result_output_file={result_output_file}")
+            shutil.copy2(return_path, result_output_file)
     os.remove(tmp_path)
 
 
