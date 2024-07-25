@@ -6,7 +6,7 @@ import numpy as np
 sys.path.append('third_part/GPEN')
 
 # from sr_model.real_esrnet import RealESRNet
-from align_faces import get_reference_facial_points, warp_and_crop_face
+from .align_faces import get_reference_facial_points, warp_and_crop_face
 from .face_detect.retinaface_detection import RetinaFaceDetection
 from sadtalker_video_lip_sync.third_part.GPEN.face_model.face_gan import FaceGAN
 
