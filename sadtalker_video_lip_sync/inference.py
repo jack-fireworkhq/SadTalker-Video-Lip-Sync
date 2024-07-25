@@ -40,6 +40,7 @@ def run(source_video: str,
     batch_size = batch_size
     current_code_path = sys.argv[0]
     current_root_path = os.path.split(current_code_path)[0]
+    parent_dir = os.path.dirname(__file__)
     os.environ['TORCH_HOME'] = os.path.join(current_root_path, checkpoint_dir)
 
     path_of_lm_croper = os.path.join(current_root_path, checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
@@ -48,7 +49,7 @@ def run(source_video: str,
     wav2lip_checkpoint = os.path.join(current_root_path, checkpoint_dir, 'wav2lip.pth')
 
     audio2pose_checkpoint = os.path.join(current_root_path, checkpoint_dir, 'auido2pose_00140-model.pth')
-    audio2pose_yaml_path = os.path.join(current_root_path, 'src', 'config', 'auido2pose.yaml')
+    audio2pose_yaml_path = os.path.join(parent_dir, 'src', 'config', 'auido2pose.yaml')
 
     audio2exp_checkpoint = os.path.join(current_root_path, checkpoint_dir, 'auido2exp_00300-model.pth')
     audio2exp_yaml_path = os.path.join(current_root_path, 'src', 'config', 'auido2exp.yaml')
