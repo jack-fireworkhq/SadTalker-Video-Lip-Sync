@@ -72,9 +72,9 @@ def run(source_video: str,
     print(mapping_checkpoint)
     animate_from_coeff = AnimateFromCoeff(free_view_checkpoint, mapping_checkpoint, facerender_yaml_path, device)
 
-    restorer_model = GFPGANer(model_path='checkpoints/GFPGANv1.3.pth', upscale=1, arch='clean',
+    restorer_model = GFPGANer(model_path=f'{checkpoint_dir}/GFPGANv1.3.pth', upscale=1, arch='clean',
                               channel_multiplier=2, bg_upsampler=None)
-    enhancer_model = FaceEnhancement(base_dir='checkpoints', size=512, model='GPEN-BFR-512', use_sr=False,
+    enhancer_model = FaceEnhancement(base_dir=checkpoint_dir, size=512, model='GPEN-BFR-512', use_sr=False,
                                      sr_model='rrdb_realesrnet_psnr', channel_multiplier=2, narrow=1, device=device)
 
     # crop image and extract 3dmm from image
