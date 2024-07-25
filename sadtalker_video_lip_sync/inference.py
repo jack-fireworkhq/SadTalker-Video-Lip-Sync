@@ -26,7 +26,8 @@ def run(source_video: str,
         dian_output: str = "",
         DAIN_weight: str = "",
         time_step: float = 0.05,
-        remove_duplicates: bool = False):
+        remove_duplicates: bool = False,
+        cpu: bool = False):
     pic_path = source_video
     audio_path = driven_audio
     enhancer_region = enhancer
