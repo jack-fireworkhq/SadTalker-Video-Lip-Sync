@@ -33,7 +33,7 @@ def run(source_video: str,
     enhancer_region = enhancer
     save_dir = os.path.join(result_dir, strftime("%Y_%m_%d_%H.%M.%S"))
     os.makedirs(save_dir, exist_ok=True)
-    if torch.cuda.is_available() and not args.cpu:
+    if torch.cuda.is_available() and not cpu:
         device = "cuda"
     else:
         device = "cpu"
